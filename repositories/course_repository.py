@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.member import Member
 from models.course import Course
+from models.booking import Booking
 
 def save(course):
     sql = "INSERT INTO courses(title, date, time) VALUES (%s, %s, %s) RETURNING id"
@@ -26,7 +27,7 @@ def select_all():
 
 def select(id):
     course = None
-    sql = "SELECT * FROM locations WHERE id = %s"
+    sql = "SELECT * FROM courses WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
@@ -44,3 +45,4 @@ def members(id):
         member = Member(row['firstname'], row['lastname'], row['id'])
         members.append(member)
     return members
+

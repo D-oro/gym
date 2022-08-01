@@ -1,8 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h1>All courses</h1>
+<hr>
 
-all courses
+<table class="table">
+    <tr>
+        <th>Course</th>
+        <th>Date</th>
+        <th>Time</th>
+        
+    </tr>
+    {% for course in courses %}
+    <tr>
+        <td><a href="/bookings/{{course.id}}">{{course.title}}</a></td>
+        <td>{{course.date}}</td>
+        <td>{{course.time}}</td>
+    </tr>
+    {% endfor %}
+</table>
 
 
 {% endblock %}

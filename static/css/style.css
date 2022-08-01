@@ -1,6 +1,18 @@
-body {
+html {
     background: lightseagreen;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: aliceblue;
 }
 
+.flex{
+    display:flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.box{
+    width: 250px;
+    height: 250px;
+    background-color: orchid;
+    border: 1px solid grey;
+}

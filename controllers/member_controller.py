@@ -17,8 +17,26 @@ def new():
     members = member_repository.select_all()
     return render_template("/members/new.html", members = members)
 
+
+# post route to actually add the input from the new member page
+@members_blueprint.route("/members", methods=['POST'])
+def create():
+    firstname = request.form['firstname']
+    lastname = request.form['lastname']
+    member = Member(firstname, lastname)
+    member_repository.save(member)
+    return redirect('/members')
+
+
 # route to edit member
 @members_blueprint.route("/members/<id>/edit")
 def edit(id):
     member = member_repository.select(id)
     return render_template('/members/edit.html', member = member)
+
+
+# show one member:
+@members_blueprint.route("/members/<id>")
+def show(id):
+    member = member_repository.select(id)
+    return render_template("members/show.html", member=member)

@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-One course
+{{course.title }}
+{{ course.date }}
+{{ course.time }}
 
-with details 
+{% for booking in bookings %}
 
-a button for adding a member onto this course
+    {{ booking.member.firstname }}
+    {{ booking.member.lastname }}
 
-and members who have booked the class
+{% endfor %}
 
 {% endblock %}

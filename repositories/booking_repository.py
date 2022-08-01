@@ -42,11 +42,18 @@ def select(id):
     return booking
 
 
-
-
-
-
-
+def find_booking_by_course_id(id):
+    bookings = []
+    sql = "SELECT * FROM bookings WHERE course_id =%s"
+    values = [id]
+    results = run_sql(sql, values)
+    
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        course = course_repository.select(row['course_id'])
+        booking = Booking(member, course, row['id'])
+        bookings.append(booking)
+    return bookings
 
 
 

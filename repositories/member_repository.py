@@ -24,15 +24,24 @@ def select_all():
         members.append(member)
     return members
 
+
+#select one member
+
 def select(id):
     member = None
     sql = "SELECT * FROM members WHERE id =%s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if result is not None:
+    if len(results) > 0:
+        result = results[0]
         member = Member(result['firstname'], result['lastname'], result['id'])
     return member
+
+
+
+
+
 
 def courses(id):
     sql = "SELECT courses.* FROM courses INNER JOIN bookings ON courses.id = bookings.course_id WHERE bookings.member_id = %s"
