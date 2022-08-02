@@ -29,13 +29,19 @@ def create():
     course_repository.save(course)
     return redirect('/courses')
 
-
-
 # route to edit course
 @courses_blueprint.route("/courses/<id>/edit")
 def edit(id):
     course = course_repository.select(id)
     return render_template('/courses/edit.html', course=course)
 
-
-
+# route to update the course we're editing
+@courses_blueprint.route("/courses/<id>", methods=['POST'])
+def update(id):
+    title = request.form['title']
+    date = request.form['date']
+    time = request.form['time']
+    course = Course(title, date, time, id)
+    course_repository.update(course)
+    return redirect('/courses')
+    

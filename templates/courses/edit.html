@@ -1,7 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h1>Edit details for {{course.title}}</h1>
+<h2>Enter any changes and click "submit"</h2>
 
-edit this one course
+<form action="/courses/{{course.id}}" method="post">
+    <div>
+        <label for="title">Name</label>
+        <input type="text" name="title" id="title" value ={{course.title}} placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="date">Date</label>
+        <input type="text" name="date" id="date" value ={{course.date}} placeholder="dd/mm/yyyy">
+    </div>
+
+    <div>
+        <label for="time">Time</label>
+        <input type="text" name="time" id="time" value ={{course.time}} placeholder="HH/mm">
+    </div>
+
+
+    <button type="submit" class="button3">edit course</button>
+</form>
+
+
+
 
 {% endblock %}

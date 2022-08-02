@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>All courses</h1>
+<h1>All upcoming classes</h1>
 <hr>
 
 <table class="table">
@@ -13,9 +13,10 @@
     </tr>
     {% for course in courses %}
     <tr>
-        <td><a href="/bookings/{{course.id}}">{{course.title}}</a></td>
+        <td><a href="/bookings/{{course.id}}"><button>{{course.title}}</button></a></td>
         <td>{{course.date}}</td>
         <td>{{course.time}}</td>
+        <td><a href="/courses/{{course.id}}/edit"><button>edit class details</button></a></td>
     </tr>
     {% endfor %}
 </table>

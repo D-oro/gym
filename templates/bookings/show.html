@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-{{course.title }}
-{{ course.date }}
-{{ course.time }}
+<h1>{{course.title}}</h1>
+<h2>{{course.date}} - {{course.time }}</h2>
+<hr>
+ 
+<div class="booking">
+        <table>
+            <tr>
+                <td><h2>Members attending:</h2></td>
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{booking.member.firstname}} {{booking.member.lastname}}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-{% for booking in bookings %}
-
-    {{ booking.member.firstname }}
-    {{ booking.member.lastname }}
-
-{% endfor %}
-
+        <a href="/bookings/{{course.id}}/new"><button class="button1">book a member onto {{course.title}}</button></a>
+</div>
 {% endblock %}

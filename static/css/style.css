@@ -4,15 +4,78 @@ html {
     color: aliceblue;
 }
 
+header{
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .flex{
     display:flex;
     flex-direction: row;
     flex-flow: row wrap;
 }
 
-.box{
+.booking{
+    display: flex;
+    justify-content: space-between
+}
+
+.button2{
     width: 250px;
     height: 250px;
     background-color: orchid;
     border: 1px solid grey;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
 }
+
+.button1{
+    width: 100px;
+    height: 100px;
+    background-color: orchid;
+    border: 1px solid grey;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.button3{
+    width: 120px;
+    height: 40px;
+    background-color: orchid;
+    border: 1px solid grey;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+
+td{
+    padding: 0px 0px 0px 10px;
+    text-align: left;
+}
+
+th{
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+}
+
+h1, h2, h3{
+    text-align: left;
+}
+
+h1{
+    font-size: xx-large;
+}
+
+h2{
+    font-size: large;
+}
+
+h3{
+    font-size:medium
+}
+
