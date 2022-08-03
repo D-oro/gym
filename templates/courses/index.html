@@ -17,6 +17,7 @@
         <th>Date</th>
         <th>Time</th>
         <th>Max Capacity</th>
+        <th>Peak time</th>
         
     </tr>
     {% for course in courses %}
@@ -25,6 +26,7 @@
         <td>{{course.date}}</td>
         <td>{{course.time}}</td>
         <td>{{course.capacity}}</td>
+        <td>{% if course.peak == 2 %}Yes {% endif %}</td>
         <td><a href="/courses/{{course.id}}/edit"><button>edit class details</button></a></td>
     </tr>
     {% endfor %}

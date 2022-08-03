@@ -5,7 +5,8 @@ DROP TABLE courses;
 CREATE TABLE members(
     id SERIAL PRIMARY KEY,
     firstname VARCHAR(255),
-    lastname VARCHAR(255)
+    lastname VARCHAR(255),
+    premium INT
 );
 
 CREATE TABLE courses(
@@ -13,7 +14,8 @@ CREATE TABLE courses(
     title VARCHAR(255),
     date VARCHAR(255),
     time VARCHAR(255),
-    capacity INT
+    capacity INT,
+    peak INT
 );
 
 CREATE TABLE bookings(

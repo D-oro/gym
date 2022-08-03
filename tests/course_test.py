@@ -3,7 +3,7 @@ from models.course import Course
 
 class TestCourse(unittest.TestCase):
     def setUp(self):
-        self.course = Course("Yoga", "25/08/2022", "10am", 2)
+        self.course = Course("Yoga", "25/08/2022", "10am", 2, 1)
 
     def test_course_has_title(self):
         self.assertEqual("Yoga", self.course.title)
@@ -16,3 +16,6 @@ class TestCourse(unittest.TestCase):
 
     def test_course_has_capacity(self):
         self.assertEqual(2, self.course.capacity)
+
+    def test_course_has_peak(self):
+        self.assertEqual(1, self.course.peak)

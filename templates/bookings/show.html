@@ -7,7 +7,7 @@
 
 
 <h1>{{course.title}}</h1>
-<h2>{{course.date}} - {{course.time}} - {{course.capacity}}</h2>
+<h2>{{course.date}} - {{course.time}} - {{course.capacity}} - {{course.peak}}</h2>
 <hr>
  
 <div class="booking">
@@ -17,7 +17,7 @@
             </tr>
             {% for booking in bookings %}
             <tr>
-                <td>{{booking.member.firstname}} {{booking.member.lastname}}</td>
+                <td>{{booking.member.firstname}} {{booking.member.lastname}} {{booking.member.premium}}</td>
             </tr>
             {% endfor %}
         </table>

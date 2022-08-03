@@ -3,8 +3,8 @@ from models.member import Member
 from models.course import Course
 
 def save(member):
-    sql = "INSERT INTO members(firstname, lastname) VALUES (%s, %s) RETURNING id"
-    values = [member.firstname, member.lastname]
+    sql = "INSERT INTO members(firstname, lastname, premium) VALUES (%s, %s, %s) RETURNING id"
+    values = [member.firstname, member.lastname, member.premium]
     results = run_sql(sql, values)
     member.id = results[0]['id']
     return member
@@ -20,7 +20,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        member = Member(row['firstname'], row['lastname'], row['id'])
+        member = Member(row['firstname'], row['lastname'], row['premium'], row['id'])
         members.append(member)
     return members
 
@@ -33,13 +33,13 @@ def select(id):
 
     if len(results) > 0:
         result = results[0]
-        member = Member(result['firstname'], result['lastname'], result['id'])
+        member = Member(result['firstname'], result['lastname'], result['premium'], result['id'])
     return member
 
 #update one member
 def update(member):
-    sql = "UPDATE members SET (firstname, lastname) = (%s, %s) WHERE id =%s"
-    values = [member.firstname, member.lastname, member.id]
+    sql = "UPDATE members SET (firstname, lastname, premium) = (%s, %s, %s) WHERE id =%s"
+    values = [member.firstname, member.lastname, member.premium, member.id]
     run_sql(sql, values)
 
 
