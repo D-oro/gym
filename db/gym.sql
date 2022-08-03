@@ -13,6 +13,7 @@ CREATE TABLE courses(
     title VARCHAR(255),
     date VARCHAR(255),
     time VARCHAR(255),
+    capacity INT
 );
 
 CREATE TABLE bookings(

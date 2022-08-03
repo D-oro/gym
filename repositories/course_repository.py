@@ -4,8 +4,8 @@ from models.course import Course
 from models.booking import Booking
 
 def save(course):
-    sql = "INSERT INTO courses(title, date, time) VALUES (%s, %s, %s) RETURNING id"
-    values = [course.title, course.date, course.time]
+    sql = "INSERT INTO courses(title, date, time, capacity) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [course.title, course.date, course.time, course.capacity]
     results = run_sql(sql, values)
     course.id = results[0]['id']
     return course
@@ -21,7 +21,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        course = Course(row['title'], row['date'], row['time'], row['id'])
+        course = Course(row['title'], row['date'], row['time'], row['capacity'], row['id'])
         courses.append(course)
     return courses
 
@@ -35,13 +35,13 @@ def select(id):
     if result:
         print(f"result = {result}")
         result = result[0]
-        course = Course(result['title'], result['date'], result['time'], result['id'])
+        course = Course(result['title'], result['date'], result['time'], result['capacity'], result['id'])
     return course
 
 #update one course
 def update(course):
-    sql = "UPDATE courses SET (title, date, time) = (%s, %s, %s) WHERE id=%s"
-    values = [course.title, course.date, course.time, course.id]
+    sql = "UPDATE courses SET (title, date, time, capacity) = (%s, %s, %s, %s) WHERE id=%s"
+    values = [course.title, course.date, course.time, course.capacity, course.id]
     run_sql(sql, values)
 
 

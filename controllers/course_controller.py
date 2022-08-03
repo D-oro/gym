@@ -25,7 +25,8 @@ def create():
     title = request.form['title']
     date = request.form['date']
     time = request.form['time']
-    course = Course(title, date, time)
+    capacity = request.form['capacity']
+    course = Course(title, date, time, capacity)
     course_repository.save(course)
     return redirect('/courses')
 
@@ -41,7 +42,8 @@ def update(id):
     title = request.form['title']
     date = request.form['date']
     time = request.form['time']
-    course = Course(title, date, time, id)
+    capacity = request.form['capacity']
+    course = Course(title, date, time, capacity, id)
     course_repository.update(course)
     return redirect('/courses')
     

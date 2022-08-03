@@ -17,10 +17,10 @@ member_repository.save(member1)
 member2 = Member('Hen', 'Rooster')
 member_repository.save(member2)
 
-course1 = Course('Yoga', '01/01/2023', '10am')
+course1 = Course('Yoga', '01/01/2023', '10am', 5)
 course_repository.save(course1)
 
-course2 = Course('Cardio', '02/02/2023', '9am')
+course2 = Course('Cardio', '02/02/2023', '9am', 2)
 course_repository.save(course2)
 
 booking1 = Booking(member1, course1)

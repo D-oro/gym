@@ -41,7 +41,6 @@ def select(id):
         booking = Booking(member, course, result['id'])
     return booking
 
-
 def find_booking_by_course_id(id):
     bookings = []
     sql = "SELECT * FROM bookings WHERE course_id =%s"
@@ -55,3 +54,4 @@ def find_booking_by_course_id(id):
         bookings.append(booking)
     return bookings
 
+ 
