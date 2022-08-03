@@ -12,7 +12,7 @@ CREATE TABLE courses(
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     date VARCHAR(255),
-    time VARCHAR(255)
+    time VARCHAR(255),
 );
 
 CREATE TABLE bookings(
