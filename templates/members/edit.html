@@ -22,7 +22,10 @@
 
     <div>
         <label for="premium">Premium member?</label>
-        <input type="premium" name="premium" id="premium" value={{member.premium}} placeholder="enter 2 for yes, 1 for no">
+        <select name="premium" id="premium">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
     </div>
 
     <button type="submit" class="button3">edit member</button>

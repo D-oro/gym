@@ -17,7 +17,7 @@
             </tr>
             {% for booking in bookings %}
             <tr>
-                <td>{{booking.member.firstname}} {{booking.member.lastname}} {{booking.member.premium}}</td>
+                <td>{{booking.member.firstname}} {{booking.member.lastname}} <td>{% if booking.member.premium == 2 %}Yes {% endif %}</td></td>
             </tr>
             {% endfor %}
         </table>

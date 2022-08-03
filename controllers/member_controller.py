@@ -46,7 +46,10 @@ def edit(id):
 def update(id):
     firstname = request.form['firstname']
     lastname = request.form['lastname']
-    premium = request.form['premium']
+    if request.form['premium'] == 'Yes':
+        premium = 2
+    else:
+        premium = 1
     member = Member(firstname, lastname, premium, id)
     member_repository.update(member)
     return redirect('/members')
