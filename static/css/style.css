@@ -4,10 +4,13 @@ html {
     color: aliceblue;
 }
 
+
+.alignright{
+    align-self: flex-end;
+}
+
 header{
-    height: 20px;
-    display: flex;
-    justify-content: flex-end;
+    height: 100px;
 }
 
 .flex{
