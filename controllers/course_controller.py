@@ -26,7 +26,12 @@ def create():
     date = request.form['date']
     time = request.form['time']
     capacity = request.form['capacity']
-    peak = request.form['peak']
+
+    if request.form['peak'] == 'Yes':
+        peak = 2
+    else:
+        peak = 1
+
     course = Course(title, date, time, capacity, peak)
     course_repository.save(course)
     return redirect('/courses')
