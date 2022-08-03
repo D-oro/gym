@@ -26,7 +26,7 @@ header{
 
 .button2{
     width: 250px;
-    height: 250px;
+    min-height: 250px;
     background-color: orchid;
     border: 1px solid grey;
     text-align: center;
@@ -37,7 +37,7 @@ header{
 
 .button1{
     width: 100px;
-    height: 100px;
+    min-height: 100px;
     background-color: orchid;
     border: 1px solid grey;
     font-weight: bold;
@@ -47,7 +47,7 @@ header{
 
 .button3{
     width: 120px;
-    height: 40px;
+    min-height: 40px;
     background-color: orchid;
     border: 1px solid grey;
     font-weight: bold;
