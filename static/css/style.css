@@ -1,9 +1,17 @@
 html {
-    background: lightseagreen;
+    /* background: #20b2aa; */
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #2071B2, #20b2aa);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
+img{
+    border-radius: 10px;
+}
 
 .alignright{
     align-self: flex-end;
@@ -24,46 +32,65 @@ header{
     justify-content: space-between
 }
 
+button, input{
+    font-size: 1.1em;
+}
+
+label, select{
+    min-height: 1em;
+    min-width: 1em;
+    font-size: 1.3em;
+}
+
 .button2{
-    width: 250px;
-    min-height: 250px;
-    background-color: orchid;
-    border: 1px solid grey;
+    min-width: 8em;
+    min-height: 8em;
+    background-image: linear-gradient(to bottom right, #da70d6, #A970DA);
+    border: 1px solid #808080;
     text-align: center;
     align-items: center;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.7em;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 .button1{
-    width: 100px;
-    min-height: 100px;
-    background-color: orchid;
+    min-width: 6em;
+    min-height: 6em;
+    background-image: linear-gradient(to bottom right, #da70d6, #A970DA);
     border: 1px solid grey;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.5em;
+    border-radius: 5px;
 }
 
 
 .button3{
     width: 120px;
     min-height: 40px;
-    background-color: orchid;
+    background-image: linear-gradient(to bottom right, #da70d6, #A970DA);
     border: 1px solid grey;
     font-weight: bold;
-    font-size: medium;
+    font-size: 1.5em;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
+div{
+    margin: 0.8em;
+}
 
 td{
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 5px 10px;
     text-align: left;
+    font-size: 1.5em;
 }
 
 th{
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 5px 10px;
     text-align: left;
+    font-size: 1.5em;
 }
 
 h1, h2, h3{
@@ -71,14 +98,14 @@ h1, h2, h3{
 }
 
 h1{
-    font-size: xx-large;
+    font-size: 4em;
 }
 
 h2{
-    font-size: large;
+    font-size: 2em;
 }
 
 h3{
-    font-size:medium
+    font-size: 1.5em;
 }
 
