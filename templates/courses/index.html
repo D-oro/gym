@@ -12,24 +12,27 @@
     <img src="/static/images/courses.jpg" alt="a group of cats with exercise balls in a gym" style="float:right" width="500px" height="380px">
 
 <table class="table">
-    <tr>
-        <th>Course</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Max Capacity</th>
-        <th>Peak time</th>
-        
-    </tr>
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Max Capacity</th>
+            <th>Peak time</th>
+        </tr>
+    </thead>
+    <tbody>
     {% for course in courses %}
-    <tr>
-        <td><a href="/bookings/{{course.id}}"><button>{{course.title}}</button></a></td>
-        <td>{{course.date}}</td>
-        <td>{{course.time}}</td>
-        <td>{{course.capacity}}</td>
-        <td>{% if course.peak == 2 %}Yes {% endif %}</td>
-        <td><a href="/courses/{{course.id}}/edit"><button>edit class details</button></a></td>
-    </tr>
+        <tr>
+            <td><a href="/bookings/{{course.id}}"><button>{{course.title}}</button></a></td>
+            <td>{{course.date}}</td>
+            <td>{{course.time}}</td>
+            <td>{{course.capacity}}</td>
+            <td>{% if course.peak == 2 %}Yes {% endif %}</td>
+            <td><a href="/courses/{{course.id}}/edit"><button>edit class details</button></a></td>
+        </tr>
     {% endfor %}
+    </tbody>
 </table>
 </body>
 
