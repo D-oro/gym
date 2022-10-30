@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<header>
-    <a href="/"><button class="button1">Home</button></a>    
-</header>
 
+<div class="index-main">
 
-<h1>Cat Cardio</h1>
-<h2> - the gym for gym kittens - </h2>
+    <header class="index-header">
+        <h1>Cat Cardio</h1>
+        <h2> - the gym for gym kittens - </h2>
+        <a href="/"><button class="button1">Home</button></a>    
+    </header>
 
+    <p class="index-body">
+        <span class="index-buttons">
+            <a href="/members"><button class="button2">All members</button></a>
+            <a href="/members/new"><button class="button2">New member</button></a>
+            <a href="/courses"><button class="button2">All classes</button></a>
+            <a href="/courses/new"><button class="button2">New class</button></a>
+        </span>
+        <span class="index-image"></span>
+    </p>
 
-<body>
-<img src="/static/images/index.jpg" alt="kitten with dumbbell" style="float:right" width="500px" height="380px">
-    <main class="flex">
-        <a href="/members"><button class="button2">All members</button></a>
-        <a href="/members/new"><button class="button2">New member</button></a>
-        <a href="/courses"><button class="button2">All classes</button></a>
-        <a href="/courses/new"><button class="button2">New class</button></a>
-    </main>
-</body>
+</div>
 
 
 {% endblock %}
