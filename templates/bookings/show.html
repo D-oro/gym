@@ -1,34 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-<header>
-    <a href="/"><button class="button1">Home</button></a>    
-</header>
 
+<div class="page-main">
 
+    <header class="page-header">
+        <h1>Cat Cardio</h1>
+        <h2> - the gym for gym kittens - </h2>
+        <a href="/"><button class="button1">Home</button></a>    
+    </header>
 
-<h1>{{course.title}}</h1>
-<h2>{{course.date}} - {{course.time}} - max capacity:{{course.capacity}} {% if course.peak == 2 %} - Peak time course {% endif %}</h2>
-<hr>
+    <span class="page-body">
+        <span class="bookings-text">
+            <p>{{course.title}}</p>
+            <p>{{course.date}} - {{course.time}} - max capacity:{{course.capacity}} </p>
+            <p>{% if course.peak == 2 %} - Peak time course {% endif %}</p>
+            {% if course.capacity > bookings|length %}
+                <a href="/bookings/{{course.id}}/new"><button class="button1">new booking </button></a>
+            {% endif %}
+        </span>
+        <span class="section-A">
+            <h2>Members attending:</h2>
+            <ul>
+                {% for booking in bookings %}
+                <li>{{booking.member.firstname}} {{booking.member.lastname}}</li>
+                {% endfor %}
+            </ul>
+        </span>
 
-
-<div class="booking">
-        <table>
-            <tr>
-                <td><h2>Members attending:</h2></td>
-            </tr>
-            {% for booking in bookings %}
-            <tr>
-                <td>{{booking.member.firstname}} {{booking.member.lastname}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-
-
-        {% if course.capacity > bookings|length %}
-
-            <a href="/bookings/{{course.id}}/new"><button class="button1">book a member onto {{course.title}}</button></a>
-
-        {% endif %}
+    </span>
 
 </div>
 {% endblock %}

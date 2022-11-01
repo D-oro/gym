@@ -1,28 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-<header>
-    <a href="/"><button class="button1">Home</button></a>    
-</header>
+<div class="page-main">
 
+    <header class="page-header">
+        <h1>Cat Cardio</h1>
+        <h2> - the gym for gym kittens - </h2>
+        <a href="/"><button class="button1">Home</button></a>    
+    </header>
 
+    <span class="page-body">
 
-<h1>Book a member onto {{course.title}}</h1>
-<h2>on {{course.date}} at {{course.time}}</h2>
+        <h1>Book a member onto {{course.title}}</h1>
+        <h2>on {{course.date}} at {{course.time}}</h2>
 
+        <form action="/bookings/{{course.id}}" method="post">
+            <label for="member">Select a member</label>
+                <select name="member_id" id="member">
+                    {% for member in members %}
 
-<form action="/bookings/{{course.id}}" method="post">
-    <label for="member">Select a member</label>
-        <select name="member_id" id="member">
-            {% for member in members %}
+                    {% if member.premium >= course.peak %}
+                    <option value="{{member.id}}">{{member.firstname}} {{member.lastname}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
 
-            {% if member.premium >= course.peak %}
-            <option value="{{member.id}}">{{member.firstname}} {{member.lastname}}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
+            <button type="submit" class="button1">add member</button>
 
-    <button type="submit" class="button3">add member</button>
+        </form>
 
-</form>
+    </span>
+
+</div>
 
 {% endblock %}
